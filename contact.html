@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(46, 49, 49);
+            color: white;
+        }
+
+        header {
+            background-color: #28a745;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: aquamarine;
+            background-color: rgb(46, 49, 49);
+            border: 2px solid white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.1em;
+            margin: 0 10px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: aquamarine;
+            color: rgb(46, 49, 49);
+        }
+
+        .hero {
+            background-image: url('robot-cleaning.jpg'); /* Replace with your robot image */
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 2.5em;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .contact-info div {
+            text-align: center;
+        }
+
+        .contact-info img {
+            width: 120px;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            font-size: 1.2em;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .contact-info .whatsapp a 
+        {
+            color: #28a745; 
+
+        }
+
+        .contact-info .instagram a {
+            
+            background: linear-gradient(100deg, red, orange, violet); /* Red, orange, and violet for Instagram */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text; /* For non-WebKit browsers */
+            
+        }
+
+
+        .contact-form {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .contact-form h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #555;
+            background-color: #444;
+            color: #d4f70f;
+        }
+
+        .contact-form button {
+            background-color: #d4f70f;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #b5d608;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+        .buttons
+        {
+            margin: 0;
+            padding: 0;
+            
+        }
+        .buttons {
+            position: relative;
+            margin-left: 40px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 4em;
+            color: #fff;
+            font-weight: 700;
+            font-size: 50px;
+            transition: 0.5s;
+        }
+        .buttons:hover {
+            color: rgba(255,255,255,0.1);
+            transform: translateY(-20px);
+        }
+        .buttons::before {
+            content: attr(data-text);
+            position: absolute;
+            bottom: -10px;
+            pointer-events: none;
+            z-index: 1;
+            font-size: 0.35em;
+            color: #3bffe8;
+            font-weight: 500;
+            letter-spacing: 100px;
+            opacity: 0;
+            transition: 0.5s;
+            margin-left: 4px;
+            text-shadow: 
+            0 0 16px #3bffe8,
+            0 0 30px #3bffe8,
+            0 0 80px #3bffe8,
+            ;
+        }
+        .buttons:hover::before
+        {
+            letter-spacing: 8px;
+            opacity: 1;
+        }
+        .sections
+        {
+            position: relative;
+            width: 100%;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #222;
+            overflow: hidden;
+        }
+        ul
+        {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+        }
+        .lis
+        {
+            list-style: none;
+        }
+        .reverse {
+            flex-direction: row-reverse;
+        }
+        .kapez1 {
+            margin: 0;
+            padding: 0;
+            font-family: verdana;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh;
+            margin-right: 10px;
+            list-style: none;
+            color: #fff;
+            font-size: 4em;
+            font-weight: bold;
+            letter-spacing: 10px;
+            filter: blur(1px);
+            transition: 4s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 0;
+        }
+        .kapez1:hover,
+        .kapez1:hover ~ li {
+            transform: rotate(180deg) translateY(-200px);
+            transition: 2s;
+            filter: blur(20px);
+            opacity: 0;
+        }
+        /* Centering the cleanliness_and_ecology text */
+        .reverse {
+            justify-content: center;
+        }
+        .contact-info .whatsapp
+        {
+            color: #28a745;
+        }
+        .contact-info .instagram
+        {
+            background: linear-gradient(100deg, red, orange, violet);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            
+        }
+        .animation
+        {
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 10vh;
+            gap: 300px;
+            
+        }
+        .whatsapp
+        {
+            position: relative;
+            width: 300px;
+            height: 200px;
+        }
+        .instagram
+        {
+            position: relative;
+            width: 300px;
+            height: 200px;
+        }
+        .whatsapp img
+        {
+            position: absolute;
+            z-index: 1;
+        }
+        .instagram img
+        {
+            position: absolute;
+            z-index: 1;
+        }
+        .whatsapp img:not(:first-child)
+        {
+            animation: animate 4s linear infinite;
+            animation-delay: calc(-5s * var(--i));
+            opacity: 0.5s;
+            z-index: 1;
+        }
+        .instagram img:not(:first-child)
+        {
+            animation: animate 4s linear infinite;
+            animation-delay: calc(-5s * var(--i));
+            opacity: 0.5s;
+            z-index: 1;
+        }
+        
+        .animation img:not(:first-child)
+        {
+            animation: animate 4s linear infinite;
+            animation-delay: calc(-5s * var(--i));
+            opacity: 0.5s;
+        }
+        @keyframes animate
+        {
+            0%
+            {
+                top: 0;
+                left: 0;
+                opacity: 0.5s;
+            }
+            100%
+            {
+                top: 150px;
+                left: -250px;
+                opacity: 0;
+            }
+        }
+        .instagram:nth-child(2) img:not(:first-child)
+        {
+            animation: animate-two 4s linear infinite;
+            animation-delay: calc(-5s * var(--i));
+            opacity: 0.5s;
+            z-index: 1;
+        }
+        @keyframes animate-two
+        {
+            0%
+            {
+                top: 0;
+                left: 0;
+                opacity: 0.5s;
+            }
+            100%
+            {
+                top: 150px;
+                left: 250px;
+                opacity: 0;
+            }
+        }
+        .instagram img
+        {
+            margin-top: 50px;
+            margin-left: 100px;
+        }
+        .whatsapp img
+        {
+            margin-top: 50px;
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EcoSweep</h1>
+        <p>Innovative robot for garbage collection</p>
+    </header>
+    <section class="sections">
+        <ul>
+            <li class="lis">
+                <a class="buttons" data-text = "Home" href="http://127.0.0.1:5500/Project/home.html">Home</a>
+                <a class="buttons" data-text = "team" href="http://127.0.0.1:5500/Project/Team.html"> Team</a>
+                <a class="buttons" data-text = "About " href="http://127.0.0.1:5500/Project/about-us.html">About </a>
+                <a class="buttons" data-text = "Contact " href="http://127.0.0.1:5500/Project/Contact.html">Contact </a>
+                <a class="buttons" data-text = "FAQs" href="http://127.0.0.1:5500/Project/faq.html">FAQs</a>
+            </li>
+        </ul>
+    </section>
+    <section class="content">
+        <h2>Contact Us</h2>
+        <p>Are you a customer who needs help? Our team is waiting for your message!</p>
+        
+        <div class="contact-info">
+            <div class="whatsapp">
+                <a href="tel:+77779127575"> Phone number: +7 777 912 7575</a>
+                <img src="Whatsapp.png" class="animation">
+                <img src="Whatsapp.png" style="--i:1" class="animation">
+                <img src="Whatsapp.png" style="--i:2" class="animation">
+                <img src="Whatsapp.png" style="--i:3" class="animation">
+                <img src="Whatsapp.png" style="--i:4" class="animation">
+                <img src="Whatsapp.png" style="--i:5" class="animation">
+            </div>
+            <div class="instagram">
+                <a href="https://instagram.com/clean_beach.kz">Instagram: clean_beach.kz</a>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLAo_Z8fxnLzo5JzL_sXf2Dk2M6QKTjBjdGw&usqp=CAU"   class="animation">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLAo_Z8fxnLzo5JzL_sXf2Dk2M6QKTjBjdGw&usqp=CAU" style="--i:1"  class="animation">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLAo_Z8fxnLzo5JzL_sXf2Dk2M6QKTjBjdGw&usqp=CAU" style="--i:2"  class="animation">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLAo_Z8fxnLzo5JzL_sXf2Dk2M6QKTjBjdGw&usqp=CAU" style="--i:3"  class="animation">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLAo_Z8fxnLzo5JzL_sXf2Dk2M6QKTjBjdGw&usqp=CAU" style="--i:4"  class="animation">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLAo_Z8fxnLzo5JzL_sXf2Dk2M6QKTjBjdGw&usqp=CAU" style="--i:5"  class="animation">
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="contact-form">
+            <h2 style="color: #d4f70f;">Still got questions?</h2>
+            <form action="https://formspree.io/f/mzzpkrad" method="post">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" placeholder="Enter your question" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <ul class="reverse">
+        <li class="kapez1">Y</li>
+        <li class="kapez1">G</li>
+        <li class="kapez1">O</li>
+        <li class="kapez1">L</li>
+        <li class="kapez1">O</li>
+        <li class="kapez1">C</li>
+        <li class="kapez1">E</li>
+        <li class="kapez1">_</li>
+        <li class="kapez1">D</li>
+        <li class="kapez1">N</li>
+        <li class="kapez1">A</li>
+        <li class="kapez1">_</li>
+        <li class="kapez1">S</li>
+        <li class="kapez1">E</li>
+        <li class="kapez1">N</li>
+        <li class="kapez1">I</li>
+        <li class="kapez1">L</li>
+        <li class="kapez1">N</li>
+        <li class="kapez1">A</li>
+        <li class="kapez1">E</li>
+        <li class="kapez1">L</li>
+        <li class="kapez1">C</li>
+    </ul>
+    <section class="content">
+        <h3>Welcome to CleanBeach</h3>
+        <p>We create smart robots that help keep the environment clean. Our solutions are aimed at automating the process of garbage collection to make the world a better place.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 CleanBeach. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>

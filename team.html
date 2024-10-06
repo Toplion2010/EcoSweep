@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(46, 49, 49);
+    color: white;
+}
+
+.profile-card {
+    background-color: #636262;
+    border: 2px solid #999;
+    padding: 10px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 40px;
+    width: 400px;
+}
+
+.profile-card::before,
+.profile-card::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid #999;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+.profile-card::after {
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+}
+
+.profile-img {
+    width: 40px; /* Reduced size */
+    height: 40px; /* Reduced size */
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+    border: 2px solid #fff;
+}
+
+.profile-img img {
+    width: 100%;
+    height: auto;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-info h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.profile-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #999;
+}
+
+.profile-icons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.profile-icons i {
+    font-size: 20px;
+    color: #8bf912;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.hero {
+    background-image: url('robot-cleaning.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.content h3 {
+    color: #28a745;
+    font-size: 2em;
+}
+
+.content p {
+    font-size: 1.2em;
+    color: #ccc;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.buttons {
+    position: relative;
+    margin-left: 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 4em;
+    color: #fff;
+    font-weight: 700;
+    font-size: 50px;
+    transition: 0.5s;
+}
+
+.buttons:hover {
+    color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-20px);
+}
+
+.buttons::before {
+    content: attr(data-text);
+    position: absolute;
+    bottom: -10px;
+    pointer-events: none;
+    z-index: 1;
+    font-size: 0.35em;
+    color: #3bffe8;
+    font-weight: 500;
+    letter-spacing: 100px;
+    opacity: 0;
+    transition: 0.5s;
+    margin-left: 4px;
+    text-shadow: 
+        0 0 16px #3bffe8,
+        0 0 30px #3bffe8,
+        0 0 80px #3bffe8;
+}
+
+.buttons:hover::before {
+    letter-spacing: 6px;
+    opacity: 1;
+}
+
+.sections {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    overflow: hidden;
+}
+
+ul {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.lis {
+    list-style: none;
+}
+
+header {
+    background-color: #28a745;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav {
+    background-color: #333;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.profile-card:nth-child(odd) {
+    margin-left: 0;
+}
+
+.profile-card:nth-child(even) {
+    margin-left: 80px;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.kapez1 {
+    margin: 0;
+    padding: 0;
+    font-family: verdana;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    margin-right: 10px;
+    list-style: none;
+    color: #fff;
+    font-size: 4em;
+    font-weight: bold;
+    letter-spacing: 10px;
+    filter: blur(1px);
+    transition: 4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+}
+
+.kapez1:hover,
+.kapez1:hover ~ li {
+    transform: rotate(180deg) translateY(-200px);
+    transition: 2s;
+    filter: blur(20px);
+    opacity: 0;
+}
+
+video {
+    margin-left: 50%;
+    position: absolute;
+}
+
+.SEC {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.container2 {
+    position: absolute;
+    width: 1000px; /* Размер контейнера */
+    height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto; /* Центрирование */
+    overflow: hidden;
+    margin-left: 1080px;
+    margin-top: 70px;
+}
+
+.container2 span {
+    flex: 0 0 200px; /* Размер каждого участка 200px x 200px */
+    height: 200px;
+    background-image: url('logo .png');
+    background-size: 100%; /* Изображение покрывает всю область, но остается целостным */
+    background-position: center;
+    background-repeat: no-repeat; /* Убирает повторение изображения */
+}
+
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <h1>EcoSweep</h1>
+        <p>Innovative robot for garbage collection</p>
+    </header>
+    
+<section class="sections">
+    <ul>
+        <li class="lis">
+            <a class="buttons" data-text = "Home" href="http://127.0.0.1:5500/Project/home.html">Home</a>
+            <a class="buttons" data-text = " team" href="http://127.0.0.1:5500/Project/Team.html"> Team</a>
+            <a class="buttons" data-text = "About " href="http://127.0.0.1:5500/Project/about-us.html">About </a>
+            <a class="buttons" data-text = "Contact " href="http://127.0.0.1:5500/Project/Contact.html">Contact </a>
+            <a class="buttons" data-text = "FAQs" href="http://127.0.0.1:5500/Project/faq.html">FAQs</a>
+        </li>
+    </ul>
+</section>
+
+    <br>
+    <br>
+    <div style="margin-left: 50px;">
+    <h1 style="
+    position: absolute;
+    margin-left: 62.5%;
+    ">What unites us?</h1>
+    <section class="SEC">
+        <div class="container2"></div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <script>
+        const cols = 1;
+        const rows = 1;
+        for (let y = 0; y < rows; y++) {
+            for (let x = 0; x < cols; x++) {
+                let slice = document.createElement('span');
+                slice.style.backgroundPosition = `${-x * 200}px ${-y * 200}px`;
+                document.querySelector('.container2').appendChild(slice);
+            }
+        }
+        gsap.from('.container2 span',
+        {
+            duration: 2,
+            x: 1000,
+            opacity: 0,
+            stagger:
+            {
+                amount: 10,
+                from: "random"
+            },
+            ease: "power2.out"
+        });
+    </script>
+    <video width="640" height="360"  style="margin-top: 300px;" controls>
+        <source src="ROBOT.mp4" type="video/mp4">
+    </video>
+    <div class="profile-card">
+        <div class="profile-img">
+            <img src="SEYMUR2.webp" alt="Seymur's Photo">
+        </div>
+        <div class="profile-info">
+            <h2>SEYMUR</h2>
+            <p>WEB DEVELOPER</p>
+        </div>
+        <div class="profile-icons">
+            <i class="fas fa-envelope"></i>
+            <i class="fas fa-paper-plane"></i>
+            <i class="fab fa-skype"></i>
+        </div>
+    </div>
+    <div class="profile-card">
+        <div class="profile-img">
+            <img src="Alikhan.webp" alt="Alikhan's Photo">
+        </div>
+        <div class="profile-info">
+            <h2>ALIKHAN</h2>
+            <p>BUSINESS MANAGER</p>
+        </div>
+        <div class="profile-icons">
+            <i class="fas fa-envelope"></i>
+            <i class="fas fa-paper-plane"></i>
+            <i class="fab fa-skype"></i>
+        </div>
+    </div>
+    <div class="profile-card">
+        <div class="profile-img">
+            <img src="Insar.webp" alt="Insar's Photo">
+        </div>
+        <div class="profile-info">
+            <h2>INSAR</h2>
+            <p>DEVELOPER</p>
+        </div>
+        <div class="profile-icons">
+            <i class="fas fa-envelope"></i>
+            <i class="fas fa-paper-plane"></i>
+            <i class="fab fa-skype"></i>
+        </div>
+    </div>
+    <div class="profile-card">
+        <div class="profile-img">
+            <img src="Olzhas.webp" alt="Olzhas's Photo">
+        </div>
+        <div class="profile-info">
+            <h2>OLZHAS</h2>
+            <p>ENGINEER</p>
+        </div>
+        <div class="profile-icons">
+            <i class="fas fa-envelope"></i>
+            <i class="fas fa-paper-plane"></i>
+            <i class="fab fa-skype"></i>
+        </div>
+    </div>
+    <div class="profile-card">
+        <div class="profile-img">
+            <img src="Nodira.webp" alt="Nodira's Photo">
+        </div>
+        <div class="profile-info">
+            <h2>NODIRA</h2>
+            <p>PROJECT MANAGER</p>
+        </div>
+        <div class="profile-icons">
+            <i class="fas fa-envelope"></i>
+            <i class="fas fa-paper-plane"></i>
+            <i class="fab fa-skype"></i>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <ul class="reverse" style="margin-top: 100px;">
+        <li class="kapez1">Y</li>
+        <li class="kapez1">G</li>
+        <li class="kapez1">O</li>
+        <li class="kapez1">L</li>
+        <li class="kapez1">O</li>
+        <li class="kapez1">C</li>
+        <li class="kapez1">E</li>
+        <li class="kapez1">_</li>
+        <li class="kapez1">D</li>
+        <li class="kapez1">N</li>
+        <li class="kapez1">A</li>
+        <li class="kapez1">_</li>
+        <li class="kapez1">S</li>
+        <li class="kapez1">E</li>
+        <li class="kapez1">N</li>
+        <li class="kapez1">I</li>
+        <li class="kapez1">L</li>
+        <li class="kapez1">N</li>
+        <li class="kapez1">A</li>
+        <li class="kapez1">E</li>
+        <li class="kapez1">L</li>
+        <li class="kapez1">C</li>
+    </ul>
+    <section class="content">
+        <h3>Welcome to EcoSweep</h3>
+        <p>We create smart robots that help keep the environment clean. Our solutions are aimed at automating the process of garbage collection to make the world a better place.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 EcoSweep. All rights reserved.</p>
+    </footer>
+</body>
+</html>

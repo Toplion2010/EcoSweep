@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>FAQ</title>
+    <style>
+        .hero {
+            background-image: url('robot-cleaning.jpg'); /* Замените на изображение вашего робота */
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero h2 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .content h3 {
+            color: #28a745;
+            font-size: 2em;
+        }
+        .content p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .buttons {
+                flex-basis: 100%;
+                margin: 10px 0;
+            }
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(46, 49, 49);
+            color: white;
+        }
+        header {
+            background-color: #28a745;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        nav .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav .buttons {
+            margin: 0 10px;
+            color: aquamarine;
+            background-color: rgb(46, 49, 49);
+            border: 2px solid white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: larger;
+            display: inline-block;
+        }
+        nav .buttons:hover {
+            background-color: aquamarine;
+            color: rgb(46, 49, 49);
+        }
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+            color: aqua;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2em;
+        }
+        .faq-item {
+            margin: 10px 0;
+            border-top: 1px solid #d9d9d9;
+            border-bottom: 1px solid #d9d9d9;
+            padding: 10px 0;
+        }
+        .faq-question {
+            font-weight: bold;
+            font-size: 1.2em;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            margin-top: 10px;
+            display: none;
+            font-size: 1em;
+            line-height: 1.5;
+            color: #8dc575;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-item.active .faq-question::after {
+            content: '–'; /* Меняем иконку на минус */
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5em;
+            color: white;
+        }
+        .title {
+            color: chartreuse;
+        }
+        .end {
+            color: rgb(216, 238, 90);
+        }
+        .contact-form-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .contact-form {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            text-align: center;
+        }
+        .contact-form h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .contact-form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #555;
+            background-color: #444;
+            color: #d4f70f;
+        }
+        .contact-form button {
+            background-color: #d4f70f;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .contact-form button:hover {
+            background-color: #b5d608;
+        }
+        .photo1, .photo2 {
+            width: 100px;
+            height: auto;
+        }
+        .photo2 {
+            height: 65px;
+        }
+        .whatsapp, .email {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 10px 0;
+        }
+        .whatsapp {
+            color: rgb(21, 213, 120);
+        }
+        .email {
+            color: rgb(213, 117, 21);
+        }
+        @media (max-width: 600px) {
+            nav .buttons {
+                margin: 5px 0;
+                font-size: medium;
+            }
+        }
+        .buttons
+        {
+            margin: 0;
+            padding: 0;
+            
+        }
+        .buttons {
+            position: relative;
+            margin-left: 40px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 4em;
+            color: #fff;
+            font-weight: 700;
+            font-size: 50px;
+            transition: 0.5s;
+        }
+        .buttons:hover {
+            color: rgba(255,255,255,0.1);
+            transform: translateY(-20px);
+        }
+        .buttons::before {
+            content: attr(data-text);
+            position: absolute;
+            bottom: -10px;
+            pointer-events: none;
+            z-index: 1;
+            font-size: 0.35em;
+            color: #3bffe8;
+            font-weight: 500;
+            letter-spacing: 100px;
+            opacity: 0;
+            transition: 0.5s;
+            margin-left: 4px;
+            text-shadow: 
+            0 0 16px #3bffe8,
+            0 0 30px #3bffe8,
+            0 0 80px #3bffe8,
+            ;
+        }
+        .buttons:hover::before
+        {
+            letter-spacing: 6px;
+            opacity: 1;
+        }
+        .sections
+        {
+            position: relative;
+            width: 100%;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #222;
+            overflow: hidden;
+        }
+        ul
+        {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+        }
+        .lis
+        {
+            list-style: none;
+        }
+        .reverse {
+            flex-direction: row-reverse;
+        }
+        .kapez1 {
+            margin: 0;
+            padding: 0;
+            font-family: verdana;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh;
+            margin-right: 10px;
+            list-style: none;
+            color: #fff;
+            font-size: 4em;
+            font-weight: bold;
+            letter-spacing: 10px;
+            filter: blur(1px);
+            transition: 4s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 0;
+        }
+        .kapez1:hover,
+        .kapez1:hover ~ li {
+            transform: rotate(180deg) translateY(-200px);
+            transition: 2s;
+            filter: blur(20px);
+            opacity: 0;
+        }
+        /* Centering the cleanliness_and_ecology text */
+        .reverse {
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>EcoSweep</h1>
+        <p>Innovative robot for garbage collection</p>
+    </header>
+    
+<section class="sections">
+    <ul>
+        <li class="lis">
+            <a class="buttons" data-text = "Home" href="http://127.0.0.1:5500/Project/home.html">Home</a>
+            <a class="buttons" data-text = " team" href="http://127.0.0.1:5500/Project/Team.html">Team</a>
+            <a class="buttons" data-text = "About " href="http://127.0.0.1:5500/Project/about-us.html">About</a>
+            <a class="buttons" data-text = "Contact " href="http://127.0.0.1:5500/Project/Contact.html">Contact</a>
+            <a class="buttons" data-text = "FAQs" href="http://127.0.0.1:5500/Project/faq.html">FAQs</a>
+        </li>
+    </ul>
+</section>
+
+    <h1 class="title">Frequently Asked Questions</h1>
+    <div class="faq-container">
+        <!-- FAQ items here -->
+    </div>
+    <div class="faq-container">
+        
+
+        <div class="faq-item">
+            <div class="faq-question">What is EcoSweep?</div>
+            <div class="faq-answer">
+                EcoSweep is a company that creates a robot that can clean beaches.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What is the goal of your project?</div>
+            <div class="faq-answer">
+                Our goal is to create a robot for cleaning garbage on the beach - to automate the cleaning process to protect the environment. This helps to reduce pollution, keep beaches clean, improve the ecological situation and increase tourist attractiveness.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How much does this robot cost?</div>
+            <div class="faq-answer">
+                You can find out by contacting our administrator. To do this, click on the "Contact Us" tab and write to the specified number.
+            </div>
+        </div>
+
+        
+        <div class="faq-item">
+            <div class="faq-question">Where does this contest take place?</div>
+            <div class="faq-answer">
+                The contest is held online, allowing participants from all over the world to join.
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    </form>
+    <h1 class="end">Still got questions?</h1>
+    <h1 class="whatsapp">Phone number: +7 777 912 7575</h1>
+    <div>
+        <h1><img class="photo1" src="data:image/png;base64,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"></h1>
+    </div>
+    <h1 class="email">Email address: seymuragayev434@gmail.com</h1>
+    <div>
+        <h1><img class="photo2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARwAAACxCAMAAAAh3/JWAAABPlBMVEXo5Nj////oWkz49e62tq6yOTD///329u739Ovq6uLm5dfrubHgVEbnW0znXEn15tzWdWf7+vbnWlC8uK64ta+fKh+yOizmwLy3hnyhJyGoMyPrWUzrWE7nwru1t6z59PC2gHnJxbmtLym1ODPe2s7Oyr7//P//8+z09+u8s6+0uKrRVEri3tLW1MfsWEnJY1vRVU/bmY3cVUz/8Oz73s7Le23v5tfcgoD75d3y08vy/f3ck47ObGbaUUny0MTRXFTTko3TcnHEcWbiXkT78d/Xi4TOZ2PpqKDkrqvRWUvYoZXuvrLHWkrks6PWVUTVfnOmKBbERDnVlYblc2PvqZzLq6PIm5HHtqjGZ1js+u3x6dPzvqvgjYbIgHDQlYjRqpnJrqbbxrqbMSqePj2sV1i+e32sZ2P11tmjUUzPoZ8fduV8AAAVhklEQVR4nO2dC0Pa2LaAISBJkR1lQ3HmJMLQqomiASN1oOXRWq3FFzO9x7EzdzrtnXvPPP7/H7hr7R2QQhJ2kEdoZ516rFMM5Mt677WTSHSs7OxEEwn4k3iOP/G/LqVE+SfH/9/hp5LwP/PIeDicSO97Iroj9CuhlEFA0fvT8pLxcEBjnjs6g2AY9kVd+wcJstjZcZhwcxgjInB2dhJpo1bf2Kiln6eXWnbS6drGxp81I+1c4YfCgYMY9ReNit1sllumLBdkORaTl1AUJSYrm2XbLrUbh/VYNDrWrgQ0x3hbbupUklRVK52vmUAmpiyjFGTz9LAkWZZqWXrzzaox1q7GwUkkNhtNnRBJkohq6ZXva0qsUJDZu8WWRBQ5VojhNa13m5okaYRokibZjVZ6BzyGDyEfOMz9Hr0sabomARwChDSLllsxNCyFvdtyCLApFMCkLtu6ileZi6Y1Xxg8zHjx8YOT2EnXXtmSaqmE6IwOISqtnJ+a8vKQAZGNo/TP5umvJQKeocfGUl9bze5ROu2Tm/iZVSJaOyFABrCoKh6QMIVMdWvglsGCjUWftaCAuynI1UaTvH6t6Y7qwNV+/Zro3TU/v+MH5/nRK2pZEpV0jcMB0cEv2+0Nw0THs+izFhQZTOpthRI4F9I3K/AREoELbSS8Y5avWb2wNZX5G0nqHZSCc9Zo5fDUZE5uKUSWa2dgUhKeS8+u8GrjqTXP0xPBiW6U4BAsTnE06JIldGmaZjfqMTCtRZ+2mMitMqVE0wiVBoTgj9QqbXgbljscLEHSR28kCx3xgN70FVLX25eKjNoDtoWMQhbYIaCyDwZZmXl6XtEtQnVUlWGhKmkYQeFAQZV+W9IsQkaO5/AhnRen4HjA8xjhVKAC2lNMMdfObKpZkvuJgHk1LwPCwWrz6A3RKVFdDwrRS9Wa71uKjPlDGM0LrpqMGYdyWdYtVQULUN1ORFUt6aQQCA468OebTZV6wUG3Azbbvga/HAujZ1YUTOJl2bio6JinSZ5wVKlTD6o50egL9pseaAhGLarbZ2haiybhLlBmmrVntiY5ftP9RMAv2+fBohW8uvBm1H0NACfo/SGov28Z6IzD5Y4dh2Nclm3LIhL1PhFdh2TnlZddecDZidYqFjhzL59DdJ1omBDq7bdKCKtQLP+MFyWowAmFq6h6aQ9GFqt9FAxOItG68dHGexXSaAmqCfgwWGxB+Fy0jbF2ClaaSr1sU4xRus95QGYImlWqeaSBXmaVuBSCA+9NofY3TYWRKSy+HJVNVOOCsdqmhHhkIgMXFzRHa7aCwUkkVlM+puoIpaiYFr26MDCmozYv3LzkwhFcotMzm6iDpZQPHKu5OQs4QEbHNoDV/FArpCFsFYxFq47C8tLW+5QlSV6J32dwpFnBAS7gmME7a6mrSxMbqAvPlrGVcnrd0SQIF2P1huEj6s2mR7vL0+eIwME3hw8hYTegdHFqyou3Kiinat0bDVINKJF9kpH7cwgOJxEVMitWsOtYuVBqYw+MX7zFcGGrIqbSKtu6xgKRgOZITHMuZwRn4E0oFuoFNK2FOB7W1TaNw5IYk3uHhJrjLtODA/7HPjzFjEcx5fnjMZWjwnO52m3qlGpeZc/ohwb7I3OAgyZmd6vM7OWFWJasXF6lMKfXxXQH4UCFePPD7OEQ7LbRq1UDF0Lmrzng6dYOS5akWryxNe7TOpeT2D/m5gEHkmX4Kh2eQr48fzhyrH4Cnpiy5RehGM4uKLDJPZ6PWUEdp5UadUx55i3GapkiFcKWFUTgYLui9OTpysrjjTnA4csdlLZXDdbDnbX6KPwtZFztXTsrUavfQh+T4BC+EAdq82QFBDUnEXUJ51OFgwKfkJTOeK01Y7fczzjBpBq2pKlebUt3QvQmh2hWnn47NzhEG2gvOzIjOMDeZGuvynWJYnNpYLV3rPTUZq6aQ8Ho4QJeXSvKzBe2wPOD9si1M5tVkGJ6o/bYAJbcnOGwz0hU7eZDTZl1LmiyaRioF5hBiXlihEMp/TG30pf5wSGaheUWJBA4BzZTNgWcLDnF9QW20KsCnPGpMSr2gEnNGQ5OMOhMeSpvjdn6HFlO17pN1dI06nxYobqBNnO5vk3N16x6AlcytV5jS7JsdmiasQuOhwut5unllVBfgn8gNmBEMe9b+UwWAIdg3VLelGNHCGbq6gNhCkf8AnxI5peATW6IzfTgqN4rfSNwkE/l3MCAi3F3enj4+kKhemJrgiGKfXQJXfGPI2ymqDl8sEUMDn41uzVTVhQTFyimBkdOF2Rzo01xXTFI4jdqUlOFo+HEjtCiDWEUwVuWW2ACyjThoM85fVdCv68FgEMhJ3ZhM0U4aLZiDVRnjNCCQt3AfHB6DlmOGa2GruG0onBby0ttpg0HVxJ7/+hz3XAMjA1qaM1nVRkjFq8RH87GVFbb8BnApNQxmtPrTIDDQU88aziU/te/2wRzUZUPJwuoNSHYXjawfzp5ReGAVSDyGWclYgk4Po1VoqDpxCLtcm4gtZlRtJLo+i+tddtSsa2k3l+dMVL67RQ3H8Qe1gaTcYg11mrYumDM1HX0ApqValx89y9XMtOEQwCOmaweljSWsYsGdlW1T6oxuWCYyuR2Bbm2WUjHrkuaZb0mQp6Pr+zppWe3me/c1WaqcAhdX0sm1y7fpywd8QjpDThPiVZWcfR9Us2RuWGZtWc3Ks6xieUTuGFDs8s/7e5m5qI5ZH0tcpxMVs9KVMcmigAdjVHVbt4Zk7feGZxCutW2VJbsWmI6C5reAbXJZxmc2Uer9eNkJJKMgPLY+BK/+ZfeJ1TZ2oRuN1qTTjkV2HaLo/MKHg8nkiSRqwIvscu/3eWz8TiH40pnig6ZoFlFjiORtTooD2rE2E4K4X/gKl5dG2k2p6I43V8BleHbu3CiuPrqhuK6y1gs+FYskIK3+ZjJ57NZhPPUW3PcxywmhcOken4FGQSmGpqQB4DQUXl5lIYczjC48xHxzphdyyYQumTzSCJvhPiwcUoq7+7yIFxz5gknmUwet7o2eB4qmMKDAVqp9y1Dxh03wn2eAvPE8ulhUxNthUrOHHnjYyaezS4GDnwdn7cxpgoFLZVtv7E614b5cwzpCNoVVuBG/VmKLWyLkVFBo0n77FMe0YjAccXwILOCb4+OWyclHdNVgTEq9MoQWm+6NcyUZbEtbThrLSvXbfDpuniVqUt24+JuL5PZ28vGFwMHdQcyQih0BLykhJk8ZmVaqrwp3N4B760otXc32AoVG+FENDptn91m9vL5vfiuEJypO+QkoxNJ/vLfzlTrGOG7aNFx0Mpbg/WABQhBmVlvpF4H6bPBa99f3GGMysLXXj4+Dk7AmUAhzenpT7L6axPnzFTBDjfoGZhW7KiAsyqjE96MmMxn6MyYbJyXiOhogE5VSbOk9gdUG9AZJuxb5htvONNaK3eBg3J8fWVTTWwKj6dFdnlT4fO5zl7jATiOPhVwNvTn066tCfh7fAU6NdWyaPniDmwpH48PwvHRnJnCWUPP07VxY7JINchSNMjPLk75MMBoH4Ov55g4N9sqYzNURCFxElAHs+2A2qA5xbOhgAO1BGSEGFCIIBxdh69mty5DKFJc1v74/RXApC464FyFPLHG0i2Ltn+7AzQZYBISOMljNK3Wui3oc9Dr4BxYeRP1xhia55FZZqMohXSt2yForAJzbFi/Qd5nP/t4h1TyLPkLAxzmlCOPkmsXbcFOQu90Si8NMzY82e3cQSBmbF7h8jLx3BE3dDhVo+13n8DZZCFQAaF8KDSHZTyI5/iyIRLUOUAcrrJ4D6wfoxwpFOS
+            fTeOFrYEj0TABH4dcg1LKkjonF3eoMXHucHpmFV8wHM4HHDNmhOh5iOBIiKpVVp2ohdtFWYzCZrxp1k9SlioJlm24gR7yPqwy40xrPhOktWg4TI4vy7b0+UZ9XzgqKZ3VYnxli8GB75D4mddtNvs4njBuwCCsD3vxKet44dDB4Y55LRlp/XpDMNcXqyig2Gqe1CEbZMPLCvM4slk77LCFfxEXxib8SOfsFi0qvHB4sRWpXb/HolgToUPwRbSyamC2w0JU7Cgdw7iHWyXFCk14sxuoMgHBbn6YS2jgJLltQdhqdVOSJVSMsjv9WFrlrMbG+8C0flaUt+2UxdJJoWoKEqHOs1sksLvL1GaETwjg9Js8kUdQTrQJEfM64L41VU2VW7jkx26v0G1SgELZXLOAV6c373/azfZKqRFvzOAsOlp9ZlrJtRYriSje7Msvv3UIahZpn5+amP9tvsG+hq/GcEekYYMW8HWwTewojAuZe81xJTNXODxmwV+qhyVs4NhUaJsGqAqYlmwa522BWoGwEQJLh4PbV1AuoEl5s+lpzuLh9G0Mgnoj5XmDjZHTVS2dllvVZzeSJcIGb0wGL9ShXNhlTFzDVEjhoBxX393ouO19PBu2bEvtTidlWQI+GBc7KL3RdSwX0M3c9yeWAg4mzMnj1bLN8v9x4gxsIBnBzYfY/7JPsDmxl4/7swkfHEd5WmclgUodZ4g1NhOB94EQYYP7Attnnxxv6xqjQgvnvgVfOxep1NmaC06L4F7jsa9mVlVp/JTJZ+N7DIxPqAofnHtK4Hm6TRyncdacgsw3DvMjOJIIZop/hXLBT1nc4IQgzxnSIHht9byNe6F0+AqwZOkCh20HROetYpt4jKP5DM7CM2R3vYFq4tFxq2HjnJwkmDR7wOl/6Z0Pt15he3ngRHCShy/8VbCfJzpy5AWH3TqD4FQJW6xbdjj9cgKnebCrLrxq6SYaFF16BcoFOOGMsFWFFc7AC6tnFcr3qk3ORuJqk8+PS/uWAo7T4WG/sHZ9hbeIksRaWG5ooMawux8zrHfum9gsCZxBTsfVDx3NwhszBtnPwYVtdaa4KDUm4VtSOIjnGoK6KollwUN0cAvOq9vMXnY3iEUtD5zIGo6CseMENSxsp3be3WX4gt0XCIcH9fMOdv4Cex2dDSPhqQY1qqWBgwsUkBES4WXjPpv2h9vdbPazAYEvCk7EKUghIwwc0d9csMmJvQn0ZlngJB3luXyTYjd0H7sdiL1AA7X5lGErmYHdzedw3CUkcPqMqr+WKN5tmUg+A6I4PwD1gmSX2RL46DLvlwgHfj+5xu7oQimOz3orD5u5KXVvJ9SYJYTDJw4gqJd0vP+9ZxeD3Qtfl9ovdydWmeWDwwbBsM2DGaHfvgC2HYhtedn9ajSnj+f48plNPeff+U6pd3fx3Qca1VLB4Yt+OCiHO/5s6tEAU1WrdHK7G88G6E1MCGda9+yajub0Fej48gS3i+osZvXfEP8O1Wn7JZQLDwXD4GTZHPIcNsBOEU6ELfyV8FbfYFr9pFkj2EKnjY+7Abp9D4OTCCWcSPKXyzKwwFt99cMWThO3z5jaPNiklhkO5jzVLu74o3oPDrhiWsZFqb29/FdtVnzT1nUbwpbei+oqqeBOqd343t7X7XN4+z2JO/76g6M2qA0uLmR3s+5jbF8LnF4xWv03tt9xTYraHz5m8vdTJV81HIfQcQtvLapKtPzbXSbz8NwmCJwQJYFeeKqHFUnrsEWpKcvSwwGBjBDKhTyOhE7LoL4MOOyQ+/9zh2qT/wfOMJxk8mA7EjmI5/emCuZLgANqU9xicas4ZhLpa4SDauP8jbeL/4HTl+LBwA+Zf+AMyEFx8KckKE9mmgF9qeF8pjZM9pHO1BLBJYazVRz6D+zo23iDjq8eTnF7+L/wo29Nj86ywtkq7nv8SzJZ/MrhbI+ozSAeDOrO+T0oeI2B8+3GLG4R81CBvM/335ORYu/8ZgnncRjhbA974mE0YFqgPJkHpz3LB2d/NIAPwWF09osPmiFYTjgH/mozQGj7wdXEssEZpzaDspX5quAceAbwUcG7pm1/HdEKnAgkMH4B3FW2epuqJuq7Lw8cUBv/AO4uxftz/YLhFLcn+u1HB/H8xGNvSwJnK7M16aBushifsFJfEjjbRWdL/kRyEOf7gAPvfVgGOPuZg+SkcPgvTVaLLgOc7QAB3PMYPTpB+hkOHK8h7TDAyQTI+7xlP9OnI8qG3XIo1HC2Mw9XG+dIgUyKwwm35mS2+3f1ejCdLeecvxA4B0xtptc/xIxQPOlx4DwJp0MuilXgAeQgE6AUDTOcg8wk5YK78F03EewGidNhQ97hhDN9teGynYlnxt3+xBHQnHwY4WxNJ4C7yT5bFF1iOMXMrNCgbOfFFo1DCWeGasNlXxgO+pxQhfLp5X3eUhTJk8MHZz8TuN8XWJKonUsIZ3uKAdxfiuPphCvP2c/MKIC7CRsF82mDOY82eOJKZv5wppn3CQhb+PNe3QoXnFnlfd6yzfPB8MM5mHUAd5N9nynLEMHJTKHfN4lshx/OQXz2AdxdHm3NEc7NJHCKc8j7vKXISlFPOO6B/Okkz7eaAM7WHPI+X9niE7rZIHBWcsG3Tm/euN60zg/O/PI+b3ErJ6YLJwH/q9+43kjBG85c8z5vORgd7x4Lpx4IDkit48bGG04Y1IZLcThZHgNn5fdaUM0xrlzvHOUFJxxqw+VgaEnLF87TlZX/PQoKJ73u+qw2dzjbi8j7vGWozeMDJ4dw/q8QBA7g2Ulc6hZ7EA7xh5NMJvczCw3gbuLMEfLExxfOSu7Jf9CNiMNJAJxaRdI1MvxQslHNSR7kQ6U2XPgcIWOT9/c5uR/+9khzPDUnmki/sF1u6DcKB/K+2eyHfaAUsxk+AO8L5+nKU09/7AkH6NTb+FAy1R/OFnjiGW0WfqhgRnifE2a94Dz5w0Nv/OBEE4eWSoafwjD0BNgiBvCQwulnhL5mlfthMygcluoYDaIOP+vvMzhbeRbAQwsHMsL8GDi53B+xieAk6hWLPe5j4F5+g3CKjicOLxwW1HmlxeGM8Mn9/qfHs3F94DBJb1QIe1wF6T1pCB20A2crTHmft0BQj/cHCUbl8UYiujMBHIxYmxV85qxE+rc6VCV1fQ3ftBiuvM9btvgI6qjm5CAD/H0j8TztScBXc3YSiVY5xaJ5L6KDha2vPYqEMO/zlm2ckeOak7sHk8s9+favejrq8TjusXAwZB19X5L4M9ycu6iS9eNHB4tu3ASTLfDLmW+e9oK3Q+fbv/4uQLbrc/7+cOBXn+9svGqyZ5lwUQFOMb88aoOCO/6YWeUcefLk8e9/bBiJ5263FBKEE+VRK10/LJdSqRQqDpVo4247uRzCHxyQxFXjg8w33wKTH0D+9ftff/y0ccTPLeqHZxwcOEIa/hz9uXp49j2Xl/uPllFu//jPd9/89Pftxp+1I6fQ9Kg3xeHwjCfhfENUO9H+D0sl6TEoJoEzwsrPv39ZIgxn4BL4OrEwC//04vL/m9EmieEMdvYAAAAASUVORK5CYII="></h1>
+    </div>
+    <ul class="reverse">
+        <li class="kapez1">Y</li>
+        <li class="kapez1">G</li>
+        <li class="kapez1">O</li>
+        <li class="kapez1">L</li>
+        <li class="kapez1">O</li>
+        <li class="kapez1">C</li>
+        <li class="kapez1">E</li>
+        <li class="kapez1">_</li>
+        <li class="kapez1">D</li>
+        <li class="kapez1">N</li>
+        <li class="kapez1">A</li>
+        <li class="kapez1">_</li>
+        <li class="kapez1">S</li>
+        <li class="kapez1">E</li>
+        <li class="kapez1">N</li>
+        <li class="kapez1">I</li>
+        <li class="kapez1">L</li>
+        <li class="kapez1">N</li>
+        <li class="kapez1">A</li>
+        <li class="kapez1">E</li>
+        <li class="kapez1">L</li>
+        <li class="kapez1">C</li>        
+    </ul>
+    <section class="content">
+        <h3>Welcome to EcoSweep</h3>
+        <p>We create smart robots that help keep the environment clean. Our solutions are aimed at automating the process of garbage collection to make the world a better place.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 EcoSweep. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>
+
+
